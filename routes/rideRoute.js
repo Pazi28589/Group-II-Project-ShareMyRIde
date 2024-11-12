@@ -27,15 +27,15 @@ router.get('/:id',async(req,res)=>{
 })
 
 router.post('/',async(req,res)=>{
-    const {startingPoint,endingPoint} = req.body;
+    const {date,startingPoint,endingPoint} = req.body;
 
-    if(!startingPoint || !endingPoint){
+    if(!date || !startingPoint || !endingPoint){
         res.status(404).send("please provides required fields")
 
     }
     else{
         try{
-            const result = await Ride.create({startingPoint,endingPoint});
+            const result = await Ride.create({date,startingPoint,endingPoint});
             res.status(200).json(result)
 
         }
@@ -77,15 +77,15 @@ router.put('/:id',async(req,res)=>{
 
     }
     else{
-        const {startingPoint,endingPoint} = req.body;
+        const {date,startingPoint,endingPoint} = req.body;
 
-        if(!startingPoint || !endingPoint){
+        if(!date || !startingPoint || !endingPoint){
             res.status(404).send("please provides required fields")
 
         }
         else{
             try{
-                const result = await ride.updateOne({startingPoint,endingPoint});
+                const result = await ride.updateOne({date,startingPoint,endingPoint});
                 res.status(200).json(result)
             }
             catch(error){
