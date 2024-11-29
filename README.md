@@ -8,8 +8,7 @@ more efficient use of transportation resources and contributes to environmental 
 <li>Introduction</li>
 <li>Features</li>
 <li>Technologies Used</li>
-<li>Installation</li>
-<li>Usage</li>
+
 
 <h3>Introduction</h3>
 <p>Most people commute daily, mostly alone in their vehicles. This increases the level of traffic congestion and fuel consumption, 
@@ -31,5 +30,23 @@ to make commuting more efficient, cost-effective, and environmentally friendly.S
     <li>Send ride requests to drivers.</li>
     <li>View Confirmed rides.</li></ul>
 </ul>
+<h3>Technologies</h3>
+<ul>
+  <li>Frontend:</li>
+<ul>
+  <li>React Native</li>
+  <li>Javascript</li>
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+  <li>Backend:</li>
+  <ul>
+    <li>Node.js</li>
+    <li>Express.js</li>
+</ul>
+<li>Database:</li>
+<ul>
+  <li>MongoDB</li>
+</ul></ul>
 
 
