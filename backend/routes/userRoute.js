@@ -54,3 +54,20 @@ router.post('/login',async(req,res)=>{
         res.status(500).json({error:err.message});
     }
 });
+//submit feedback
+router.post('/feedback',auth,async(req,res)=>{
+    const{rideId,rating,comment,feedbackType}=req.body;
+    try{
+        const feedback =new Feedback({
+            userId:req.user.userId,
+            rideId,
+            rating,
+            comment,
+            feedbackType
+        });
+const savedFeedback=await feedback.save();
+res.status(200).json(savedFeedback);
+    }catch(err){
+        res.status(500).json({error:error.message});
+    }
+    });
