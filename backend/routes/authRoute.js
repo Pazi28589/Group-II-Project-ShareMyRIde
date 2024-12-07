@@ -7,6 +7,11 @@ const secretekey='project@shareMyRide';
 
 router.post("/register", async (req, res) => {
   try {
+    //check already an account 
+    const existingUser=await User.findOne({NIC:req.body.NIC});
+    if(existingUser){
+      return res.status(400).json({message:"An Account with this NIC already Exists."})
+    }
     // Check password
     if (req.body.password !== req.body.confirmPassword) {
       return res.status(400).json({ message: "Passwords do not match" });
