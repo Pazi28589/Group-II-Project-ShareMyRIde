@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View className="h-screen w-screen flex items-center justify-center">
       <Text>Share My Ride</Text>
-      <Text>Welcome</Text>
+      <Text className="text-red-500">Welcome</Text>
       <StatusBar style="auto" />
     </View>
   );
