@@ -1,14 +1,16 @@
 import React from "react";
 import { Button, Text, View } from "react-native";
 import { TextInput } from "react-native";
-import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
-import { Formik } from 'formik';
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { Formik } from "formik";
+import { router } from "expo-router";
 
 const register = () => {
-  
-const onFormSubmit=(values)=>{
-    console.log(values)
-}
+  const onFormSubmit = (values) => {
+    console.log(values);
+    router.replace("/dashboard")
+  };
+
   return (
     <SafeAreaProvider>
       <SafeAreaView>
@@ -26,7 +28,7 @@ const onFormSubmit=(values)=>{
             onSubmit={onFormSubmit}
           >
             {({ handleChange, handleBlur, handleSubmit, values }) => (
-              <View className="mt-4 border p-4 flex gap-4">
+              <View className="mt-4 w-full border p-4 flex gap-4">
                 <View>
                   <Text className="mb-2">First Name: </Text>
                   <TextInput
