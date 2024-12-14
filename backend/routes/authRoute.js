@@ -97,17 +97,21 @@ router.put("/editProfile/:id",async(req,res)=>{
 
 //delete a ac
 router.delete('/deleteAc/:id',async(req,res)=>{
-  if(req.body.userId==req.params.id){
-    try{
-      await User.findByIdAndDelete(req.params.id);
-      res.status(200).json("Account has been deleted")
-    }
-    catch(error){
-      return res.status(500).json(error);
-    }
+ try{
+  const authenticatedUserId=req.user.userId;
+  if(authenticatedUserId !==req.params.id){
+    return res.status(403).json("You can delete only your account");
   }
-  else{
-    return res.status(403).json("You can delete only your ac")
+  const user=await User.findByIdAndDelete(req.params.id);
+  if(!user){
+    return res.status(404).json("User not found");
   }
+  res.status(200).json("Account has been deleted")
+
+ }
+ catch(error){
+  console.error(error);
+  res.status(500).json("An error occured while deleting the account");
+ }
 })
 module.exports=router;
