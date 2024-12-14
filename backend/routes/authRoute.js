@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const auth=require("../Security/auth")
 const secretekey='project@shareMyRide';
+const {verifyToken}=require("../Security/auth")
 
 router.post("/register", async (req, res) => {
   try {
@@ -96,9 +97,10 @@ router.put("/editProfile/:id",async(req,res)=>{
 
 
 //delete a ac
-router.delete('/deleteAc/:id',async(req,res)=>{
+router.delete('/deleteAc/:id',verifyToken,async(req,res)=>{
  try{
-  const authenticatedUserId=req.user.userId;
+  const userId=req.params.id;
+  const authenticatedUserId=req.userId;
   if(authenticatedUserId !==req.params.id){
     return res.status(403).json("You can delete only your account");
   }
