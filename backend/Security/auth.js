@@ -10,7 +10,7 @@ function verifyToken(req,res,next){
             return res.status(403).send("token not available")
         }
         const actualToken = token.split(" ")[1];
-        jwt.verify(actualToken, secretKey, (err, decoded) => {
+        jwt.verify(actualToken, secretekey, (err, decoded) => {
             if (err) {
                 console.log("Invalid token");
                 return res.status(401).json({ error_message: "Invalid token" });
@@ -31,3 +31,5 @@ function verifyToken(req,res,next){
         return res.status(500).json({error_message:error.message})
     }
 }
+
+module.exports={verifyToken};
