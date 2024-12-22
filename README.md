@@ -49,4 +49,16 @@ to make commuting more efficient, cost-effective, and environmentally friendly.S
   <li>MongoDB</li>
 </ul></ul>
 
+<h3>To run this project</h3>
+<ul>
+<li>backend</li>
+  <ul>
+  <li>in terminal 'npm start'</li>
+  </ul>
+<li>frontend</li>
+  <ul>
+  <li>in terminal 'npm expo start'</li>
+  </ul>
+</ul>
+
 
