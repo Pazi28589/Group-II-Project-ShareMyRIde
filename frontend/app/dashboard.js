@@ -17,7 +17,9 @@ const dashboard = () => {
         <Pressable onPress={toggleMenu}> 
           <Ionicons name="menu" size={30} color="black" /> 
         </Pressable> 
-        <Text className="mt-5 text-3xl text-center">dashboard</Text>
+        <View className="flex-1 items-center"> 
+          <Text className="mt-5 text-3xl ">Dashboard</Text> 
+        </View>
       </View>
 
       <Text className="mt-5 text-center">
@@ -49,13 +51,29 @@ const dashboard = () => {
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Pressable onPress={() => { 
-              // Handle menu item press (e.g., navigate to profile) 
               router.push('/profile'); 
               toggleMenu(); 
             }}>
-              <Text>View Profile</Text>
+              <View style={styles.menuItem}> 
+                <Text>View Profile</Text> 
+              </View>
             </Pressable>
-            {/* Add more menu items here */}
+            <Pressable onPress={() => { 
+              router.push('/edit-profile'); 
+              toggleMenu(); 
+            }}>
+              <View style={styles.menuItem}> 
+                <Text>Edit Profile</Text> 
+              </View>
+            </Pressable>
+            <Pressable onPress={() => { 
+              router.push('/login'); 
+              toggleMenu(); 
+            }}>
+              <View style={styles.menuItem}> 
+                <Text>Logout</Text> 
+              </View>
+            </Pressable>
           </View>
         </View>
       </Modal>
@@ -66,14 +84,18 @@ const dashboard = () => {
 const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start', 
+    alignItems: 'flex-start', 
     backgroundColor: 'rgba(0, 0, 0, 0.5)', 
   },
   modalContent: {
     backgroundColor: 'white',
     padding: 20,
     borderRadius: 10,
+    width: '80%', 
+  },
+  menuItem: {
+    paddingVertical: 10, 
   },
 });
 
