@@ -25,11 +25,13 @@ const dashboard = () => {
           </Pressable>
 
           <div className="full-screen">
+
             <h1 className="header text-center">Dashboard</h1>
             <p className="subtitle text-center">View your rides and bookings</p>
             <div className="flex-center">
               <button className="button-secondary">View Rides</button>
             </div>
+            
           </div>
       </View>
     </View>
