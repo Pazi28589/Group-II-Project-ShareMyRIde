@@ -9,7 +9,7 @@ export default function App() {
         <Text className="text-red-500">Welcome</Text>
         <StatusBar style="auto" />
 
-        <Link href="/register" asChild>
+        <Link href="/introone" asChild>
           <Pressable className="bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             <Text>Next</Text>
           </Pressable>
