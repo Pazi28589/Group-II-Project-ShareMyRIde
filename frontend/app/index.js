@@ -11,7 +11,7 @@ export default function App() {
 
         <Link href="/introone" asChild>
           <Pressable className="bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            <Text>Next</Text>
+            <Text>Start</Text>
           </Pressable>
         </Link>
       </View>
